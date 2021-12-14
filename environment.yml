@@ -1,0 +1,9 @@
+name: envirocar-notebooks
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - jupyterlab
+  - matplotlib
+  - pandas
+  - seaborn

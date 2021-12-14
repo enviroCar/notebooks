@@ -1,0 +1,10 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IntelliJ IDEs
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints
