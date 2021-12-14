@@ -15,11 +15,13 @@ def plot(df: pd.DataFrame, freq_seconds: int):
     freq_seconds:
         x-label tick frequency
     """
+    time_index = df.index
     fig, ax = plt.subplots(figsize=(10, 4))
-    sns.lineplot(x=df.index, y="value", hue="pid", style="pid", markers=True, data=df, ax=ax)
-    ax.set_xlim(df.index[0], df.index[-1])
+    sns.lineplot(x=time_index, y="value", hue="pid", style="pid", markers=True, data=df, ax=ax)
+    ax.set_xlim(time_index[0], time_index[-1])
+    ax.set_ylim(bottom=0)
     ax.set(xlabel="Time", ylabel="Measurement")
     ax.xaxis.set_major_locator(mdates.SecondLocator(interval=freq_seconds))
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%H:%M:%S"))
     ax.tick_params(axis="x", rotation=90)
-    plt.tight_layout()
+    return fig, ax
