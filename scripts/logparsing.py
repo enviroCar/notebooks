@@ -3,7 +3,7 @@ import re
 import pandas as pd
 
 param_dict = {"time": [], "pid": [], "value": []}
-match_class = "[org.envirocar.obd.OBDController]"
+match_class = "[org.envirocar.obd.adapter.SyncAdapter]"
 dt_pattern = "%Y-%m-%dT%H:%M:%S.%f"
 
 def parse_envirocar_log_pids(log_path: str):
